@@ -1,0 +1,28 @@
+<ion-header mode="ios" class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      
+      <ion-menu-button color="primary"
+               menu="primerMenu"
+               autoHide="false">
+      </ion-menu-button>
+    
+      </ion-buttons>
+    <ion-title color="primary">Ajustes</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon slot="start" name="moon"></ion-icon>
+      <ion-label>Activar tema oscuro</ion-label>
+      <ion-toggle slot="end"
+                  [ngModel]="darkMode"
+                  (ionChange)="temaOscuro()"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

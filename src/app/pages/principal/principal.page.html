@@ -1,0 +1,72 @@
+<ion-header mode="ios" class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      
+      <ion-menu-button color="primary"
+               menu="primerMenu"
+               autoHide="false">
+      </ion-menu-button>
+    
+      </ion-buttons>
+    <ion-title color="primary">Listado de Espacios</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+  <ion-toolbar>
+	<ion-segment (ionChange)="segmentChanged($event)">
+			<ion-segment-button value="todos">
+			  <ion-label>Todos</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="disponible">
+			  <ion-label>Disponibles</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="ocupado">
+					<ion-label>Ocupados</ion-label>
+				  </ion-segment-button>
+		  </ion-segment>
+</ion-toolbar>
+
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+	<ion-refresher-content
+	  pullingIcon="caret-down-outline"
+	  pullingText="Actualizar"
+	  refreshingSpinner="circles"
+	  refreshingText="Cargando...">
+	</ion-refresher-content>
+  </ion-refresher>
+<ion-list>
+	<ion-item-sliding *ngFor="let customer of customers | filtro: estado: 'estado'">
+	   <!-- <ion-item-options side="start">
+		  <ion-item-option color="ocupado" (click)="delCustomer(customer.customer_id)">Delete</ion-item-option>
+		</ion-item-options>-->
+
+		<ion-item>
+		  <ion-label>
+			  <h2>{{customer.name_customer}}</h2>
+			  <ion-text *ngIf="customer.desc_customer == 0" color="disponible">{{customer.estado}}</ion-text>
+				<ion-text *ngIf="customer.desc_customer == 1" color="ocupado">{{customer.estado}}</ion-text>
+				
+		  </ion-label>
+		  <ion-icon slot="start" *ngIf="customer.tipo == 1" class="custom-carro" color="black" style="font-size: 35px"></ion-icon>
+		  <ion-icon slot="start" *ngIf="customer.tipo == 2" class="custom-silladeruedas" color="primary" style="font-size: 35px"></ion-icon>
+		</ion-item>
+
+		<!--<ion-item-options side="end">
+
+		  <ion-item-option color="secondary" (click)="showCustomer(customer.customer_id,customer.name_customer,customer.desc_customer)">Show</ion-item-option>
+
+		  <ion-item-option (click)="updateCustomer(customer.customer_id,customer.name_customer,customer.desc_customer)">Update</ion-item-option>
+
+		</ion-item-options>-->
+	</ion-item-sliding>
+</ion-list>
+
+<ion-infinite-scroll (ionInfinite)="loadData($event)">
+	<ion-infinite-scroll-content
+	  loadingSpinner="bubbles"
+	  loadingText="Cargando más datos...">
+	</ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

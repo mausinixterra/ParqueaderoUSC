@@ -1,0 +1,8 @@
+{
+  "name": "ParqueaderoUSC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "9c057df2"
+}

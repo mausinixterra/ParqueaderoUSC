@@ -1,0 +1,43 @@
+[
+    {
+      "icon": "home-outline",
+      "name": "Inicio",
+      "redirectTo": "/principal"
+    },
+    {
+      "icon": "person-circle-outline",
+      "name": "Perfil",
+      "redirectTo": "/perfil"
+    },
+    {
+      "icon": "book-outline",
+      "name": "Instructivo",
+      "redirectTo": "instruciones"
+    },
+    {
+      "icon": "construct-outline",
+      "name": "Ajustes",
+      "redirectTo": "/ajustes"
+    },
+    {
+      "icon": "lock-open-outline",
+      "name": "Cambiar contraseña",
+      "redirectTo": "/cambiar-pass"
+    },
+    {
+      "icon": "newspaper-outline",
+      "name": "Noticias",
+      "redirectTo": "/noticia"
+    },
+    {
+      "icon": "information-circle-outline",
+      "name": "Acerca de",
+      "redirectTo": "/acerca-de"
+    },
+    {
+      "icon": "log-out-outline",
+      "name": "Cerrar Sesión",
+      "redirectTo": "salir"
+    }
+  ]
+  

@@ -1,0 +1,40 @@
+<ion-header mode="ios" class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      
+      <ion-menu-button color="primary"
+               menu="primerMenu"
+               autoHide="false">
+      </ion-menu-button>
+    
+      </ion-buttons>
+    <ion-title color="primary">Mi Perfil</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-avatar class="foto-perfil">
+        <img src="../../../assets/user.svg">
+      </ion-avatar>
+
+        <ion-item>
+            <ion-label position="stacked" color="primary" class="size">Tipo e Identificacion</ion-label>
+            <ion-input readonly="true" >{{ tipo }} {{ identificacion }}</ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="stacked" color="primary" class="size">Nombre</ion-label>
+              <ion-input readonly="true" > {{nombre}} {{apellido}}</ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked" color="primary" class="size">Correo</ion-label>
+                <ion-input readonly="true" > {{correo}}</ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="stacked" color="primary" class="size">Telefono</ion-label>
+                  <ion-input readonly="true" > {{telefono}}</ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked" color="primary" class="size">Tipo de perfil</ion-label>
+                    <ion-input readonly="true" > Estudiante</ion-input>
+                  </ion-item>
+</ion-content>

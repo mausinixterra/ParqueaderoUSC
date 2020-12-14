@@ -1,0 +1,41 @@
+<ion-menu side="start" 
+            menuId="primerMenu"
+            contentId="principal"
+            persistent="true">
+  <ion-header>
+    <ion-toolbar color="primary" class="my-custom-menu">
+        <ion-buttons slot="start">
+            <ion-avatar class="avatar">
+              <img class="imagen" src="../../../assets/user.svg">
+            </ion-avatar>
+          </ion-buttons>
+          <ion-label> 
+            <p>{{nombre}} {{apellido}}</p>
+            <p>{{ identificacion }}</p>
+        </ion-label>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+          <ion-menu-toggle *ngFor="let c of componentes | async">
+              <ion-item [routerDirection]="'customer'" [routerLink]="c.redirectTo" *ngIf="c.redirectTo != 'salir' && c.redirectTo != 'instruciones'">
+                <ion-icon  mode="ios" slot="start" [name]="c.icon" color="primary"></ion-icon>
+                <ion-label>{{ c.name }}</ion-label>
+              </ion-item>
+              <ion-item *ngIf="c.redirectTo == 'instruciones'" (click)="viewVideo()">
+                <ion-icon mode="ios" slot="start" [name]="c.icon" color="primary"></ion-icon>
+                <ion-label>{{ c.name }}</ion-label>
+              </ion-item>
+              <ion-item *ngIf="c.redirectTo == 'salir'" (click)="prosesLogout()">
+                  <ion-icon mode="ios" slot="start" [name]="c.icon" color="primary"></ion-icon>
+                  <ion-label>{{ c.name }}</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar  class="ion-text-center">
+          <ion-label color="primary">Parqueadero USC v1.0.0 - 2020</ion-label>
+        </ion-toolbar>
+      </ion-footer>
+  </ion-menu>

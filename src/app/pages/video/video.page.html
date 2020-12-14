@@ -1,0 +1,13 @@
+<ion-content>
+  <ion-buttons  (click)="dismiss()" float-right padding-top padding-end>
+      <ion-icon slot="icon-only" name="close" color="light"></ion-icon>
+  </ion-buttons>
+
+
+
+<div class="delimitador">
+  <div class="contenedor">
+      <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(videoUrl)"></iframe>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-header mode="ios" class="ion-no-border">
+	<ion-toolbar  mode="ios">
+			<ion-buttons slot="start">
+				<ion-back-button text="Volver" color="primary"  defaultHref="/"></ion-back-button>
+			</ion-buttons>
+	  <ion-title  color="primary">Registrarse</ion-title>
+	</ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding">
+<ion-list>
+	
+		  <ion-item>
+				<ion-label>Tipo Identificación</ion-label>
+				<ion-select interface="popover" [(ngModel)]="tipoIdentificacion">
+				  <ion-select-option   value="CC">CC</ion-select-option>
+				  <ion-select-option   value="TI">TI</ion-select-option>
+				  <ion-select-option   value="CE">CE</ion-select-option>
+				  <ion-select-option   value="Pasaporte">Pasaporte</ion-select-option>
+				</ion-select>
+		  </ion-item>
+	  
+
+	  <ion-item>
+			<ion-label position="fixed" >Identificación</ion-label>
+			<ion-input type="text" [(ngModel)]="identificacion"></ion-input>
+		  </ion-item>
+
+		<ion-item>
+			<ion-label position="fixed" >Nombre</ion-label>
+			<ion-input type="text" [(ngModel)]="nombre"></ion-input>
+		</ion-item>
+
+	  <ion-item>
+			<ion-label position="fixed" >Apellido</ion-label>
+			<ion-input type="text" [(ngModel)]="apellido"></ion-input>
+		  </ion-item>
+
+	  <ion-item>
+	    <ion-label position="floating">Correo Institucional</ion-label>
+		<ion-input type="text" [(ngModel)]="correoInstitucional" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label position="fixed">Telefono</ion-label>
+		<ion-input type="number" [(ngModel)]="telefono" ></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label position="fixed">Contraseña</ion-label>
+	    <ion-input type="password" [(ngModel)]="contrasenia"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label position="floating">Confirmar Contraseña</ion-label>
+	    <ion-input type="password" [(ngModel)]="confirm_contrasenia"></ion-input>
+	  </ion-item>
+
+	</ion-list>
+	<ion-row>
+		<ion-col size="6">
+			<ion-button expand="block" class="ion-padding" color="success" fill="outline" (click)="prosesRegister()">Registrarse</ion-button>
+		</ion-col>
+		<ion-col size="6">
+			<ion-button expand="block" class="ion-padding" color="danger" fill="outline" (click)="cancelarRegistro()">Cancelar</ion-button>
+		</ion-col>
+	</ion-row>
+
+</ion-content>
